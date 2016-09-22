@@ -18,7 +18,7 @@
     <nodes xmi:type="eer:Attribute" xmi:id="_Fb01kIDgEeaVGPqbyY2-iw" name="curriculo" AttributeLinkTarget="_HPUzgIDgEeaVGPqbyY2-iw"/>
     <nodes xmi:type="eer:Entity" xmi:id="_muaQkIDgEeaVGPqbyY2-iw" name="Especialidade" AttributeLinkSource="_zDiaMIDgEeaVGPqbyY2-iw _2HViYIDgEeaVGPqbyY2-iw" relationshipLink="_vuLA4IDgEeaVGPqbyY2-iw"/>
     <nodes xmi:type="eer:Relationship" xmi:id="_tunj8IDgEeaVGPqbyY2-iw" name="possui" relationshipLink="_vJj38IDgEeaVGPqbyY2-iw _vuLA4IDgEeaVGPqbyY2-iw"/>
-    <nodes xmi:type="eer:Attribute" xmi:id="_xOmR0IDgEeaVGPqbyY2-iw" name="nome" type="IDENTIFIER" AttributeLinkTarget="_zDiaMIDgEeaVGPqbyY2-iw"/>
+    <nodes xmi:type="eer:Attribute" xmi:id="_xOmR0IDgEeaVGPqbyY2-iw" name="nome" AttributeLinkTarget="_zDiaMIDgEeaVGPqbyY2-iw"/>
     <nodes xmi:type="eer:Attribute" xmi:id="_0KqaUIDgEeaVGPqbyY2-iw" name="nivel" AttributeLinkTarget="_2HViYIDgEeaVGPqbyY2-iw"/>
     <nodes xmi:type="eer:Attribute" xmi:id="_4UTJMIDgEeaVGPqbyY2-iw" name="status" AttributeLinkTarget="_617YcIDgEeaVGPqbyY2-iw"/>
     <links xmi:type="eer:AttributeLink" xmi:id="_6FF4wIDdEeaVGPqbyY2-iw" source="_NCAZgHteEea025pLEmCvrQ" target="_42-f0IDdEeaVGPqbyY2-iw"/>

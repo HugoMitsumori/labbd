@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eer="eer" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
+  <eer:Schema xmi:id="_GGUZwHteEea025pLEmCvrQ">
+    <nodes xmi:type="eer:Entity" xmi:id="_NCAZgHteEea025pLEmCvrQ"/>
+  </eer:Schema>
+  <notation:Diagram xmi:id="_GHWUgHteEea025pLEmCvrQ" type="Eer" element="_GGUZwHteEea025pLEmCvrQ" name="default.eer" measurementUnit="Pixel">
+    <children xmi:type="notation:Node" xmi:id="_NCMmwHteEea025pLEmCvrQ" type="2001" element="_NCAZgHteEea025pLEmCvrQ">
+      <children xmi:type="notation:DecorationNode" xmi:id="_NCQRIHteEea025pLEmCvrQ" type="5001"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_NCNN0HteEea025pLEmCvrQ"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_NCNN0XteEea025pLEmCvrQ" fontName="Sans"/>
+      <styles xmi:type="notation:FillStyle" xmi:id="_NCNN0nteEea025pLEmCvrQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NCNN03teEea025pLEmCvrQ" x="230" y="128"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_GHWUgXteEea025pLEmCvrQ"/>
+  </notation:Diagram>
+</xmi:XMI>
