@@ -93,7 +93,7 @@
     <links xmi:type="eer:AttributeLink" xmi:id="_YdqNUIOJEeaAdtZ7o_u_5A" source="_uQ32QINuEeaq9Y0UoKfHNw" target="_WXz7IIOJEeaAdtZ7o_u_5A"/>
     <links xmi:type="eer:AttributeLink" xmi:id="_e_AacIOJEeaAdtZ7o_u_5A" source="_gog4QINwEeaq9Y0UoKfHNw" target="_bwIDoIOJEeaAdtZ7o_u_5A"/>
     <links xmi:type="eer:RelationshipLink" xmi:id="_2fxWEIOJEeaAdtZ7o_u_5A" source="_gog4QINwEeaq9Y0UoKfHNw" target="_zMBGUIOJEeaAdtZ7o_u_5A"/>
-    <links xmi:type="eer:RelationshipLink" xmi:id="_34pNgIOJEeaAdtZ7o_u_5A" source="_MYVxMIDfEeaVGPqbyY2-iw" target="_zMBGUIOJEeaAdtZ7o_u_5A" chosenLink="true"/>
+    <links xmi:type="eer:RelationshipLink" xmi:id="_34pNgIOJEeaAdtZ7o_u_5A" source="_MYVxMIDfEeaVGPqbyY2-iw" target="_zMBGUIOJEeaAdtZ7o_u_5A"/>
   </eer:Schema>
   <notation:Diagram xmi:id="_GHWUgHteEea025pLEmCvrQ" type="Eer" element="_GGUZwHteEea025pLEmCvrQ" name="default.eer" measurementUnit="Pixel">
     <children xmi:type="notation:Node" xmi:id="_NCMmwHteEea025pLEmCvrQ" type="2001" element="_NCAZgHteEea025pLEmCvrQ">
