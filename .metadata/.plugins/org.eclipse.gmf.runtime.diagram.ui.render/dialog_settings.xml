@@ -2,7 +2,7 @@
 <section name="Workbench">
 	<section name="CopyToImageDialog">
 		<item value="png" key="CopyToImageDialog.imageFormat"/>
-		<item value="false" key="CopyToImageDialog.exportToHTML"/>
 		<item value="false" key="CopyToImageDialog.overwriteExisting"/>
+		<item value="false" key="CopyToImageDialog.exportToHTML"/>
 	</section>
 </section>
