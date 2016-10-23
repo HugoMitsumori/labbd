@@ -48,7 +48,7 @@ CREATE TABLE solucao(
 
 CREATE TABLE freelancer(
 	login VARCHAR(254) PRIMARY KEY,
-	avaliacao_media REAL,
+	avaliacao_media DECIMAL(4,1),
 	FOREIGN KEY (login) REFERENCES usuario(login)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
@@ -98,8 +98,8 @@ CREATE TABLE servico(
 	data_inicio DATE NOT NULL,
 	data_termino DATE,
 	status VARCHAR(254) NOT NULL,
-	preco REAL NOT NULL,
-	avaliacao_final REAL,
+	preco DECIMAL(17,2) NOT NULL,
+	avaliacao_final DECIMAL(4,1),
 	PRIMARY KEY (login_contratante, codigo_servico),
 	FOREIGN KEY (login_contratante) REFERENCES contratante(login)
 		ON DELETE RESTRICT
