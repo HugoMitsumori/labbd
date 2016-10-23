@@ -21,7 +21,7 @@ CREATE TABLE seguidor(
 );
 
 CREATE TABLE problema(
-	id INT NOT NULL,
+	id INT UNIQUE NOT NULL,
 	criador VARCHAR(254) NOT NULL,
 	descricao VARCHAR(254),
 	categoria VARCHAR(254),
@@ -33,9 +33,9 @@ CREATE TABLE problema(
 );
 
 CREATE TABLE solucao(
-	id INT NOT NULL,
+	id INT UNIQUE NOT NULL,
 	criador VARCHAR(254) NOT NULL,
-	id_problema INT NOT NULL,
+	id_problema INT UNIQUE NOT NULL,
 	descricao VARCHAR(254),
 	PRIMARY KEY (id, criador, id_problema),
 	FOREIGN KEY (criador) REFERENCES usuario(login)
@@ -60,9 +60,9 @@ CREATE TABLE empresa(
 );
 
 CREATE TABLE contratante(
-	login VARCHAR(254) NOT NULL,
-	cnpj_empresa VARCHAR(14) NOT NULL,
-	cargo VARCHAR(254) NOT NULL,
+	login VARCHAR(254) UNIQUE NOT NULL,
+	cnpj_empresa VARCHAR(14) UNIQUE NOT NULL,
+	cargo VARCHAR(254),
 	PRIMARY KEY (login, cnpj_empresa),
 	FOREIGN KEY (login) REFERENCES usuario(login)
 		ON DELETE CASCADE
@@ -74,12 +74,12 @@ CREATE TABLE contratante(
 
 CREATE TABLE conhecimento(
 	nome VARCHAR(254) PRIMARY KEY,
-	descricao VARCHAR(254)
+	descricao varchar(254)
 );
 
 CREATE TABLE conhecimentoFreelancer(
-	login_freelancer VARCHAR(254) NOT NULL,
-	nome_conhecimento VARCHAR(254) NOT NULL,
+	login_freelancer VARCHAR(254) UNIQUE NOT NULL,
+	nome_conhecimento VARCHAR(254) UNIQUE NOT NULL,
 	certificados VARCHAR(254),
 	PRIMARY KEY(login_freelancer, nome_conhecimento),
 	FOREIGN KEY (login_freelancer) REFERENCES freelancer(login)
@@ -91,8 +91,8 @@ CREATE TABLE conhecimentoFreelancer(
 );
 
 CREATE TABLE servico(
-	login_contratante VARCHAR(254) NOT NULL,
-	codigo_servico INT NOT NULL,
+	login_contratante VARCHAR(254) UNIQUE NOT NULL,
+	codigo_servico INT UNIQUE NOT NULL,
 	id_solucao_geradora INT,
 	nome_servico VARCHAR(254) NOT NULL,
 	data_inicio DATE NOT NULL,
@@ -110,8 +110,8 @@ CREATE TABLE servico(
 );
 
 CREATE TABLE conhecimentoRequisitado(
-	nome_conhecimento VARCHAR(254) NOT NULL,
-	codigo_servico INT NOT NULL,
+	nome_conhecimento VARCHAR(254) UNIQUE NOT NULL,
+	codigo_servico INT UNIQUE NOT NULL,
 	PRIMARY KEY (nome_conhecimento, codigo_servico),
 	FOREIGN KEY (nome_conhecimento) REFERENCES conhecimento(nome)
 		ON DELETE CASCADE
