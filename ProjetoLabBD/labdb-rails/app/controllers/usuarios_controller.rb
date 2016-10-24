@@ -19,6 +19,26 @@ class UsuariosController < ApplicationController
 
   # GET /usuarios/1/edit
   def edit
+    # Cria usuário
+    user = Usuario.new(:login => "john", :email => "joao@google.com", 
+                      :nome => "João", :cpf => "1111111111", :idade => 19,
+                      :profissao => "Programador")
+    user.save
+
+    # Cria entrada em Freelancer, correspondente ao usuário
+    freela = Freelancer.new(:login => "john")
+    freela.save
+
+    # Cria conhecimento
+    conh = Conhecimento.new(:nome => "Ruby on Rails")
+    conh.save
+
+    # Associa conhecimento ao freelancer
+    conhFree = ConhecimentoFreelancer.new(:login_freelancer => "john",
+                                          :nome_conhecimento => "Ruby on Rails")
+
+
+
   end
 
   # POST /usuarios
