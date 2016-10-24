@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Solucaos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id solucao</th>
+      <th>Criador</th>
+      <th>Id problema</th>
+      <th>Descricao</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @solucaos.each do |solucao| %>
+      <tr>
+        <td><%= solucao.id_solucao %></td>
+        <td><%= solucao.criador %></td>
+        <td><%= solucao.id_problema %></td>
+        <td><%= solucao.descricao %></td>
+        <td><%= link_to 'Show', solucao %></td>
+        <td><%= link_to 'Edit', edit_solucao_path(solucao) %></td>
+        <td><%= link_to 'Destroy', solucao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Solucao', new_solucao_path %>

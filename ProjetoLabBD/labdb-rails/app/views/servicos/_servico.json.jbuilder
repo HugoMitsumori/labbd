@@ -1,0 +1,2 @@
+json.extract! servico, :id, :login_contratante, :codigo_servico, :id_solucao_geradora, :nome_servico, :data_inicio, :data_termino, :status, :preco, :avaliacao_final, :created_at, :updated_at
+json.url servico_url(servico, format: :json)

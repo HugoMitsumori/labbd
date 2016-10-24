@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Login freelancer:</strong>
+  <%= @conhecimento_freelancer.login_freelancer %>
+</p>
+
+<p>
+  <strong>Nome conhecimento:</strong>
+  <%= @conhecimento_freelancer.nome_conhecimento %>
+</p>
+
+<p>
+  <strong>Certificados:</strong>
+  <%= @conhecimento_freelancer.certificados %>
+</p>
+
+<%= link_to 'Edit', edit_conhecimento_freelancer_path(@conhecimento_freelancer) %> |
+<%= link_to 'Back', conhecimento_freelancers_path %>

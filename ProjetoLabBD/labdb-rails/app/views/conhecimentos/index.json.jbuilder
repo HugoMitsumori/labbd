@@ -1,0 +1,1 @@
+json.array! @conhecimentos, partial: 'conhecimentos/conhecimento', as: :conhecimento

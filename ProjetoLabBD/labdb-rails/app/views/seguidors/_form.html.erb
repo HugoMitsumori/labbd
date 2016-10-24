@@ -1,0 +1,27 @@
+<%= form_for(seguidor) do |f| %>
+  <% if seguidor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(seguidor.errors.count, "error") %> prohibited this seguidor from being saved:</h2>
+
+      <ul>
+      <% seguidor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :login_seguidor %>
+    <%= f.text_field :login_seguidor %>
+  </div>
+
+  <div class="field">
+    <%= f.label :login_seguido %>
+    <%= f.text_field :login_seguido %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

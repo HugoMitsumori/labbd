@@ -1,0 +1,1 @@
+json.partial! "conhecimento_requisitados/conhecimento_requisitado", conhecimento_requisitado: @conhecimento_requisitado

@@ -1,0 +1,62 @@
+<%= form_for(servico) do |f| %>
+  <% if servico.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(servico.errors.count, "error") %> prohibited this servico from being saved:</h2>
+
+      <ul>
+      <% servico.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :login_contratante %>
+    <%= f.text_field :login_contratante %>
+  </div>
+
+  <div class="field">
+    <%= f.label :codigo_servico %>
+    <%= f.number_field :codigo_servico %>
+  </div>
+
+  <div class="field">
+    <%= f.label :id_solucao_geradora %>
+    <%= f.number_field :id_solucao_geradora %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nome_servico %>
+    <%= f.text_field :nome_servico %>
+  </div>
+
+  <div class="field">
+    <%= f.label :data_inicio %>
+    <%= f.datetime_select :data_inicio %>
+  </div>
+
+  <div class="field">
+    <%= f.label :data_termino %>
+    <%= f.datetime_select :data_termino %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= f.label :preco %>
+    <%= f.text_field :preco %>
+  </div>
+
+  <div class="field">
+    <%= f.label :avaliacao_final %>
+    <%= f.text_field :avaliacao_final %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

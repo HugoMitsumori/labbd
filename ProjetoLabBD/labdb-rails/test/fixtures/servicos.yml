@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  login_contratante: MyString
+  codigo_servico: 1
+  id_solucao_geradora: 1
+  nome_servico: MyString
+  data_inicio: 2016-10-23 22:16:17
+  data_termino: 2016-10-23 22:16:17
+  status: MyString
+  preco: 9.99
+  avaliacao_final: 9.99
+
+two:
+  login_contratante: MyString
+  codigo_servico: 1
+  id_solucao_geradora: 1
+  nome_servico: MyString
+  data_inicio: 2016-10-23 22:16:17
+  data_termino: 2016-10-23 22:16:17
+  status: MyString
+  preco: 9.99
+  avaliacao_final: 9.99

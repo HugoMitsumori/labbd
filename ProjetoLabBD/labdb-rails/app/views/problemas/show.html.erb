@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id problema:</strong>
+  <%= @problema.id_problema %>
+</p>
+
+<p>
+  <strong>Criador:</strong>
+  <%= @problema.criador %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @problema.descricao %>
+</p>
+
+<p>
+  <strong>Categoria:</strong>
+  <%= @problema.categoria %>
+</p>
+
+<p>
+  <strong>Prioridade:</strong>
+  <%= @problema.prioridade %>
+</p>
+
+<%= link_to 'Edit', edit_problema_path(@problema) %> |
+<%= link_to 'Back', problemas_path %>

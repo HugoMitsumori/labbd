@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @conhecimento.nome %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @conhecimento.descricao %>
+</p>
+
+<%= link_to 'Edit', edit_conhecimento_path(@conhecimento) %> |
+<%= link_to 'Back', conhecimentos_path %>

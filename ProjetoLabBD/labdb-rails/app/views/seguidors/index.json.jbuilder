@@ -1,0 +1,1 @@
+json.array! @seguidors, partial: 'seguidors/seguidor', as: :seguidor

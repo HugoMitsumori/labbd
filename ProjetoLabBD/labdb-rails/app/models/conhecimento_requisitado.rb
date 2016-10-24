@@ -1,0 +1,2 @@
+class ConhecimentoRequisitado < ApplicationRecord
+end

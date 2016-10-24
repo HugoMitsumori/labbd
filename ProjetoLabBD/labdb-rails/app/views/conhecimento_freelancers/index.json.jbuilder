@@ -1,0 +1,1 @@
+json.array! @conhecimento_freelancers, partial: 'conhecimento_freelancers/conhecimento_freelancer', as: :conhecimento_freelancer

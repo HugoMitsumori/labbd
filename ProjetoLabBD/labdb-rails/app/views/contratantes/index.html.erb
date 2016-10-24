@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Contratantes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Login</th>
+      <th>Cnnpj empresa</th>
+      <th>Cargo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contratantes.each do |contratante| %>
+      <tr>
+        <td><%= contratante.login %></td>
+        <td><%= contratante.cnnpj_empresa %></td>
+        <td><%= contratante.cargo %></td>
+        <td><%= link_to 'Show', contratante %></td>
+        <td><%= link_to 'Edit', edit_contratante_path(contratante) %></td>
+        <td><%= link_to 'Destroy', contratante, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contratante', new_contratante_path %>

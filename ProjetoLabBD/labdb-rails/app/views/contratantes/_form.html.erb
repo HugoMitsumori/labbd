@@ -1,0 +1,32 @@
+<%= form_for(contratante) do |f| %>
+  <% if contratante.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contratante.errors.count, "error") %> prohibited this contratante from being saved:</h2>
+
+      <ul>
+      <% contratante.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :login %>
+    <%= f.text_field :login %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cnnpj_empresa %>
+    <%= f.text_field :cnnpj_empresa %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cargo %>
+    <%= f.text_field :cargo %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

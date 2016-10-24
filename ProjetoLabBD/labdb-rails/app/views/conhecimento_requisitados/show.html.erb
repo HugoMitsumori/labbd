@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome conhecimento:</strong>
+  <%= @conhecimento_requisitado.nome_conhecimento %>
+</p>
+
+<p>
+  <strong>Codigo servico:</strong>
+  <%= @conhecimento_requisitado.codigo_servico %>
+</p>
+
+<%= link_to 'Edit', edit_conhecimento_requisitado_path(@conhecimento_requisitado) %> |
+<%= link_to 'Back', conhecimento_requisitados_path %>

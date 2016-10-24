@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome_conhecimento: MyString
+  codigo_servico: 1
+
+two:
+  nome_conhecimento: MyString
+  codigo_servico: 1

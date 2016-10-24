@@ -1,0 +1,1 @@
+json.partial! "seguidors/seguidor", seguidor: @seguidor

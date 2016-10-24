@@ -1,0 +1,32 @@
+<%= form_for(conhecimento_freelancer) do |f| %>
+  <% if conhecimento_freelancer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(conhecimento_freelancer.errors.count, "error") %> prohibited this conhecimento_freelancer from being saved:</h2>
+
+      <ul>
+      <% conhecimento_freelancer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :login_freelancer %>
+    <%= f.text_field :login_freelancer %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nome_conhecimento %>
+    <%= f.text_field :nome_conhecimento %>
+  </div>
+
+  <div class="field">
+    <%= f.label :certificados %>
+    <%= f.text_field :certificados %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Login:</strong>
+  <%= @freelancer.login %>
+</p>
+
+<p>
+  <strong>Avaliacao media:</strong>
+  <%= @freelancer.avaliacao_media %>
+</p>
+
+<%= link_to 'Edit', edit_freelancer_path(@freelancer) %> |
+<%= link_to 'Back', freelancers_path %>

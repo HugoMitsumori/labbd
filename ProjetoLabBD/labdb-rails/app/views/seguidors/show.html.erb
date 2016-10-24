@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Login seguidor:</strong>
+  <%= @seguidor.login_seguidor %>
+</p>
+
+<p>
+  <strong>Login seguido:</strong>
+  <%= @seguidor.login_seguido %>
+</p>
+
+<%= link_to 'Edit', edit_seguidor_path(@seguidor) %> |
+<%= link_to 'Back', seguidors_path %>

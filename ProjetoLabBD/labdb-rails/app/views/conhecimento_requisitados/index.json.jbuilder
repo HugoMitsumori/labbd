@@ -1,0 +1,1 @@
+json.array! @conhecimento_requisitados, partial: 'conhecimento_requisitados/conhecimento_requisitado', as: :conhecimento_requisitado

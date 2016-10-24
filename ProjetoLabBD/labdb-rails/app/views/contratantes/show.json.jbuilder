@@ -1,0 +1,1 @@
+json.partial! "contratantes/contratante", contratante: @contratante

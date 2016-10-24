@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Login:</strong>
+  <%= @contratante.login %>
+</p>
+
+<p>
+  <strong>Cnnpj empresa:</strong>
+  <%= @contratante.cnnpj_empresa %>
+</p>
+
+<p>
+  <strong>Cargo:</strong>
+  <%= @contratante.cargo %>
+</p>
+
+<%= link_to 'Edit', edit_contratante_path(@contratante) %> |
+<%= link_to 'Back', contratantes_path %>

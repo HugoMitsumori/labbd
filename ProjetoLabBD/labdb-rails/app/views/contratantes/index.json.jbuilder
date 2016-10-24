@@ -1,0 +1,1 @@
+json.array! @contratantes, partial: 'contratantes/contratante', as: :contratante

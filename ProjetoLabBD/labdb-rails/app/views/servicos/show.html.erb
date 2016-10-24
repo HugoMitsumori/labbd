@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Login contratante:</strong>
+  <%= @servico.login_contratante %>
+</p>
+
+<p>
+  <strong>Codigo servico:</strong>
+  <%= @servico.codigo_servico %>
+</p>
+
+<p>
+  <strong>Id solucao geradora:</strong>
+  <%= @servico.id_solucao_geradora %>
+</p>
+
+<p>
+  <strong>Nome servico:</strong>
+  <%= @servico.nome_servico %>
+</p>
+
+<p>
+  <strong>Data inicio:</strong>
+  <%= @servico.data_inicio %>
+</p>
+
+<p>
+  <strong>Data termino:</strong>
+  <%= @servico.data_termino %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @servico.status %>
+</p>
+
+<p>
+  <strong>Preco:</strong>
+  <%= @servico.preco %>
+</p>
+
+<p>
+  <strong>Avaliacao final:</strong>
+  <%= @servico.avaliacao_final %>
+</p>
+
+<%= link_to 'Edit', edit_servico_path(@servico) %> |
+<%= link_to 'Back', servicos_path %>
