@@ -1,0 +1,34 @@
+CREATE (hugo:Usuario {profissao: 'estudante'})
+CREATE (gian:Usuario {profissao: 'programador'})
+CREATE (luan:Usuario {profissao: 'programador'})
+CREATE (p1:Problema {descricao: 'como fazer o EP de MAC0000?'})
+CREATE 
+	(hugo)-[:DESCRIBED_PROBLEM]->(p1)
+
+CREATE (rubybasico:Conhecimento {nivel: 'basico', categoria: 'Linguagem' })
+CREATE (algebool:Conhecimento {nivel: 'basico', categoria: 'Teoria' })
+
+CREATE
+	(gian)-[:POSSUI {certificado: 'POO Avançado no IME-USP com Fábio Kon'}]->(rubybasico),
+	(luan)-[:POSSUI {certificado: 'POO Avançado no IME-USP com Fábio Kon'}]->(rubybasico),
+	(gian)-[:POSSUI {certificado: 'Algebra Booleana no IME-USP com Junior Barreira'}]->(algebool)
+
+CREATE (sol1:Solucao {descricao: 'estudar a materia e fazer o EP sozinho'})
+CREATE (sol2:Solucao {descricao: 'contratar um freelancer para fazer o EP'})
+
+CREATE
+	(sol1)-[:SOLUCIONA]->(p1),
+	(sol2)-[:SOLUCIONA]->(p1)
+
+CREATE (sv1:Servico {descricao: 'fazer meu EP de MAC0000', preco: 50}
+
+CREATE (hugo)-[:CRIA_SERVICO]->(sv1)
+
+CREATE (sv1)-[:REQUER]->(rubybasico)
+
+CREATE (gian)->[:ATENDE]->(sv1),
+		(luan)->[:ATENDE]->(sv1)
+	
+CREATE (hugo)->[:AVALIA{avaliacao : 10}]->(sv1)
+
+
