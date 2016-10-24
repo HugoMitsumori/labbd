@@ -38,7 +38,12 @@ class UsuariosController < ApplicationController
                                           :nome_conhecimento => "Ruby on Rails")
 
 
+    # Seleciona todas as soluções de um dado Freelancer
+    user = Usuario.find_by(nome: 'João')
 
+    solucoes = Solucao.find_by(criador: user.login)
+
+    
   end
 
   # POST /usuarios
