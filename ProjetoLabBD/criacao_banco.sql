@@ -67,6 +67,23 @@ CREATE TABLE contratante(
 		ON UPDATE CASCADE
 );
 
+CREATE TABLE contrato(
+	login_contratante VARCHAR(20) NOT NULL,
+	login_freelancer VARCHAR(20) NOT NULL,
+	data_inicio DATE NOT NULL,
+	descricao TEXT,
+	pontos_positivos TEXT,
+	pontos_negativos TEXT,
+	nota DECIMAL(4, 1),
+	PRIMARY KEY (login_contratante, login_freelancer),
+	FOREIGN KEY (login_contratante) REFERENCES contratante(login)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE,
+	FOREIGN KEY (login_freelancer) REFERENCES freelancer(login)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE
+);
+
 CREATE TABLE categoriaConhecimento(
 	nome VARCHAR(20) PRIMARY KEY;
 );
@@ -124,6 +141,18 @@ CREATE TABLE servico(
 		ON UPDATE CASCADE
 );
 
+CREATE TABLE interesse(
+	login_freelancer VARCHAR(20) NOT NULL,
+	codigo_servico INT,
+	PRIMARY KEY (login_freelancer, codigo_servico),
+	FOREIGN KEY (login_freelancer) REFERENCES freelancer(login)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE,
+	FOREIGN KEY (codigo_servico) REFERENCES servico(codigo_servico)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE
+);
+
 CREATE TABLE conhecimentoRequisitado(
 	nome_conhecimento VARCHAR(50) NOT NULL,
 	codigo_servico INT NOT NULL,
@@ -137,6 +166,7 @@ CREATE TABLE conhecimentoRequisitado(
 );
 
 -- DROP TABLE conhecimentoRequisitado;
+-- DROP TABLE interesse;
 -- DROP TABLE servico;
 -- DROP TABLE certificadoConhecimento;
 -- DROP TABLE conhecimentoFreelancer;
