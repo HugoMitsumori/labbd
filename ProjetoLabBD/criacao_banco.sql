@@ -85,7 +85,7 @@ CREATE TABLE contrato(
 );
 
 CREATE TABLE categoriaConhecimento(
-	nome VARCHAR(20) PRIMARY KEY;
+	nome VARCHAR(20) PRIMARY KEY
 );
 
 CREATE TABLE conhecimento(
@@ -93,7 +93,7 @@ CREATE TABLE conhecimento(
 	descricao TEXT,
 	nome_conhecimento varchar(50) NOT NULL,
 	FOREIGN KEY (nome_conhecimento) REFERENCES categoriaConhecimento(nome)
-		ON DELETE CASCADE,
+		ON DELETE CASCADE
 		ON UPDATE CASCADE
 );
 
@@ -171,6 +171,8 @@ CREATE TABLE conhecimentoRequisitado(
 -- DROP TABLE certificadoConhecimento;
 -- DROP TABLE conhecimentoFreelancer;
 -- DROP TABLE conhecimento;
+-- DROP TABLE categoriaConhecimento;
+-- DROP TABLE contrato;
 -- DROP TABLE contratante;
 -- DROP TABLE empresa;
 -- DROP TABLE freelancer;
