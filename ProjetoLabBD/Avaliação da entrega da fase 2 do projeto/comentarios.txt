@@ -1,0 +1,90 @@
+Grupo: Gianluca, Hugo e Luan
+Tema: Objective Hiring
+Fase 2
+
+>>> 1. Sobre a versão corrigida dos esquemas conceituais da Fase 1
+Para cada um dos problemas apontados nos docs entregues na fase anterior, colocarei uma observação indicando se foi ou não resolvido.
+
+> Documento de análise de requisitos
+
+- Problema 1: Embora o documento descreva sucintamente as operações do sistema, ele não descreve num nível de detalhamento suficiente os requisitos de dados do sistema.
+
+	- o documento foi corrigido e agora atende satisfatoriamente as finalidades a que se propõe.
+
+> Diagrama EER
+
+- P2: Não indicaram as restrições de participação (total/parcial);
+	- Agora está ok!
+
+- P3: Há restrições de cardinalidade erradas (ver o PDF do diagrama comentado);
+	- Agora está ok!
+
+- P4: No BD modelado, não há informações sobre o preço dos serviços, nem sobre os valores recebidos pelos Freelancers?
+	- Agora está ok!
+
+- P5: Não há dados sobre a negociação entre Freenlancers e Contratantes? Como o Contratante escolhe quem vai realizar o serviço? Como o Freelancer manifesta interesse em trabalhar num serviço?
+	- Esse problema não foi tratado. O BD só mantém informações sobre os freenlancers que foram contratados para o serviço. Mas não possibilita registrar quais são os freelances que manifestaram interesse por um serviço e que seriam os candidato à contratação. Como um contratante sabe quais profissionais deve contatar?
+
+- P6: O trabalho feito por um Freenlancer num serviço não é descrito e nem avaliado?
+	-Esse problema não foi tratado também. Freelancer tem um atributo "avaliação_média" (que parece ser um atributo derivado), mas não há no BD dados que possam ser usados para o seu cálculo.
+
+- P7: A modelagem dos relacionamentos entre "Freelancer-Tecnica" e "Servico-Tecnica" está com problemas na cardinalidade e no atriuto "certificados".
+	- Agora está ok!
+
+- P8: Qual a função do atributo "prioridade" em "Problema"? Como ele afeta o funcionamento do sistema?
+	- Isso ainda não foi esclarecido. O documento de requisitos não fala sobre esse atributo.
+
+- P9: No documento de requisitos, a funcionalidade de "Busca de Usuários" é descrita como "Um usuário deve ser capaz de encontrar qualquer outro usuário informando algumas strings que caracaterizem tal usuário (nome, idade, profissão, técnicas, entre outros)".
+  No cadastro do usuário, não há idade, profissão nem outros campos que pudessem ser usados nessa busca que não sejam as informações de técnicas.
+	- Agora está ok!
+
+-  P10: No documento de requisitos, na funcionalidade de "Avaliar Serviço", é dito que "após a conclusão do serviço, o usuário contratante deve avaliar o serviço feito pelos freelancers, informando pontos positivos e negativos do processo e do produto final".  
+   O modelo EER atual do BD não apoia esse tipo de avaliação; você precisam corrigir o modelo. 
+	
+	- Esse problema não foi tratado também. Serviço tem um atributo "avaliação_final", mas para que ele atendesse o que está descrito acima, ele precisaria ser uns três atributos diferentes: 2 textuais e um numérico.
+
+- P11: Seria interessante criar alguma categorização para as "técnicas"; na verdade técnicas não é um bom nome, porque parece ter um significado mais restrito do quê o que vocês precisam. Mais geral seria algo como "conhecimentos". E exemplos de categorias para caracterizar conhecimentos são: "linguagem de programação", "framework de desenvolvimento web", "SGBD", "framework de persistência de dados", "metodologia de desenvolvimento de software",  etc.   
+	- Esse problema foi tratado parcialmente. O nome do tipo de entidade foi mudado, mas a categorização não foi criada. 
+
+> Diagrama do BD de grafo
+
+- P12: A estrutura geral do grafo está OK! Mas as arestas desse grafo deveriam ser direcionadas; todos os relacionamentos que vocês colocaram como exemplo são unidirecionais;  
+	- Agora está ok!
+
+- P13: Vocês precisam dizer no documento de análise de requisitos o objetivo e o modo de uso do BD de grafo no projeto proposto pelo grupo. Vocês devem listar, inclusive, alguns exemplos de consultas que serão realizadas sobre o grafo.
+	- Agora está ok!
+
+
+
+-------------------------------------------------
+
+>>> 2. Esquema do banco de dados Relacional
+
+- O esquema possui algumas chaves primárias erradas. Faltou mapear um relacionamento do esquema EER.
+  Veja os detalhes sobre esses problemas no arquivo "Modelo Relacional_comentado.pdf" 
+
+
+>>> 3. Esquema físico do banco de dados Relacional (comandos SQL)
+
+- Há muitos atributos com um tamanho exagerado (em geral, VARCHAR(255)). Exemplos: email, login, nome, categoria, profissão, cargo...
+  Por outro lado, atributos como "descrição" (de Problema e Solução) deveriam ser do tipo "text", para poder acomodar strings maiores. Além disso, esse atributo deveria ser obrigatório nas duas tabelas.
+
+- As tabelas Solução e Problema possuem um atributo "id" (que parece ser um identificador artificial). Por que esse atributo não pode ser sozinho a chave primária da relação? Por que vocês incluíram outros atributos na chave?
+
+- A chave primária de Contratante deveria ser apenas "login"; e o atributo "cnpj_empresa" não pode ser Unique, já que segundo o EER de vocês, uma empresa pode ter mais de um contratante.
+
+- Na tabela ConhecimentoFreelancer, nem login_freelancer e nem nome_conhecimento podem ser unique, já que o um mesmo freelancer pode ter vários conhecimentos, e um mesmo conhecimento pode ser de vários freelancers. Só a combinação dos dois é única na tabela (tanto que o par é a chave primária). Atenção a isso, pois vocês cometeram erro similar em Contratante (como descrito no item anterior), em Serviço (onde o login_contratante não pode ser unique) e em conhecimentoRequisitado (onde nem nome_conhecimento e nem cod_servico podem ser uniques).
+   De onde veio essa ideia de que atributos que compõem uma chave primaria composta precisam ser unique individualmente? Isso não faz sentido.
+
+- Serviço também parece ter uma chave artificial (cod_serviço), mas vocês definiram como chave primária login_contratante + codigo_servico. login_contratante não precisa estar nessa chave 
+
+
+>>> 4. Escolha da linguagem e do arcabouço para o desenvolvimento do projeto
+
+- Ok (escolheram Ruby on Rails + a gem neo4j)
+
+>>> 5. Faça alguns testes de acesso e uso do(s) seus banco(s) de dados NoSQL
+
+- Mostraram exemplos de manipulação para os dois tipos de SGBDs usados no projeto.
+- Ok. Entretanto, para o Neo4J, mostraram comandos de criação de dados em Cypher, mas não mostraram consultas e também não mostraram como esses comandos podem ser executados em um programa em Ruby.
+
