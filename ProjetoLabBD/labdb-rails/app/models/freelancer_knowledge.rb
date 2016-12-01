@@ -1,0 +1,2 @@
+class FreelancerKnowledge < ApplicationRecord
+end
