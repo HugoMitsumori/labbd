@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  knowledge_name: MyString
+  freelancer_login: MyString
+  certificate_name: MyString
+
+two:
+  knowledge_name: MyString
+  freelancer_login: MyString
+  certificate_name: MyString

@@ -5,9 +5,9 @@ rails generate scaffold Contractor login:string company_cnpj:string role:string
 rails generate scaffold Company cnpj:string description:string
 rails generate scaffold Freelancer login:string average_score:decimal
 rails generate scaffold Issue issue_id:integer creator:string description:string category:string priority:string
-rails generate scaffold Follower follower_login:String followed_login:string
-rails generate scaffold Service contractor_login:string service_code:integer solution_id:int service_name:string start_date:datetime end_date:datetime status:string price:decimal final_score:decimal
-rails generate scaffold Solution solution_id:integer creator:string problem_id:int description:string
+rails generate scaffold Follower follower_login:string followed_login:string
+rails generate scaffold Service contractor_login:string service_code:integer solution_id:integer service_name:string start_date:datetime end_date:datetime status:string price:decimal final_score:decimal
+rails generate scaffold Solution solution_id:integer creator:string problem_id:integer description:string
 rails generate scaffold User login:string email:string name:string cpf:string age:integer profession:string
 rails generate scaffold Proposal service_code:integer freelancer_login:string status:string
 rails generate scaffold Certificate knowledge_name:string freelancer_login:string certificate_name:string

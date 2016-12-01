@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Service code:</strong>
+  <%= @proposal.service_code %>
+</p>
+
+<p>
+  <strong>Freelancer login:</strong>
+  <%= @proposal.freelancer_login %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @proposal.status %>
+</p>
+
+<%= link_to 'Edit', edit_proposal_path(@proposal) %> |
+<%= link_to 'Back', proposals_path %>

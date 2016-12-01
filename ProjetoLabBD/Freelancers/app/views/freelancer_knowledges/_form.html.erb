@@ -1,0 +1,27 @@
+<%= form_for(freelancer_knowledge) do |f| %>
+  <% if freelancer_knowledge.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(freelancer_knowledge.errors.count, "error") %> prohibited this freelancer_knowledge from being saved:</h2>
+
+      <ul>
+      <% freelancer_knowledge.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :freelancer_login %>
+    <%= f.text_field :freelancer_login %>
+  </div>
+
+  <div class="field">
+    <%= f.label :knowledge_name %>
+    <%= f.text_field :knowledge_name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

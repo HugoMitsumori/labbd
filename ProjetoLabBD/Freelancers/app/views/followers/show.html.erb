@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Follower login:</strong>
+  <%= @follower.follower_login %>
+</p>
+
+<p>
+  <strong>Followed login:</strong>
+  <%= @follower.followed_login %>
+</p>
+
+<%= link_to 'Edit', edit_follower_path(@follower) %> |
+<%= link_to 'Back', followers_path %>
