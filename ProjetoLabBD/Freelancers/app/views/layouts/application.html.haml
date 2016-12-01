@@ -1,0 +1,66 @@
+!!! 5
+%html
+  %head
+    %title ProjetoBD
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+
+  %body
+    %header
+      %nav.navbar.navbar-fixed-top.navbar-default
+        .container-fluid
+          .navbar-header
+            = link_to "ProjetoBD", users_path, :class => "navbar-brand"
+          %ul.nav.navbar-nav.navbar-right
+            %li= link_to 'Home', users_path
+            %li= link_to 'Users', '/users/index'            
+            %li= link_to 'Services', services_path
+            - if logged_in?
+              %li
+                = link_to users_path do
+                  %span(class="glyphicon glyphicon-group")
+                  Members
+              %li
+                = link_to new_user_path do
+                  Add User
+              %li
+                = link_to new_service_path do
+                  Add Service
+              %li.dropdown
+                %a.dropdown-toggle{ :href => "#", "data-toggle" => "dropdown"}
+                  Account
+                  %b.caret
+                %ul.dropdown-menu
+                  %li
+                    = link_to  user_path(current_user) do
+                      %span(class="glyphicon glyphicon-user")
+                      Profile
+                  %li.divider
+                  %li
+                    = link_to logout_path, method: "delete" do
+                      %span(class="glyphicon glyphicon-log-out")
+                      Log Out
+            - else
+              %li
+                = link_to users_path do
+                  %span(class="glyphicon glyphicon-log-in")
+                  Log In
+              %li
+                =link_to users_path do
+                  %span(class="glyphicon glyphicon-arrow-up")
+                  Sign Up
+    .container
+      - if flash[:notice]
+        #notice.message= flash[:notice]
+      - elsif flash[:warning]
+        #warning.has_error.message
+          %ul.warning
+            - flash[:warning].each do |msg|
+              %li= msg
+          
+      = yield
+    %footer.footer
+      %small
+        ProjetoBD - Gianluca Takara, Hugo Mitsumori, Luan Torres
+
