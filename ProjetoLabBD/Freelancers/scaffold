@@ -1,0 +1,11 @@
+rails generate scaffold FreelancerKnowledge freelancer_login:string knowledge_name:string certificates:string
+rails generate scaffold RequiredKnowledge knowledge_name:string service_code:integer
+rails generate scaffold Knowledge name:string description:string
+rails generate scaffold Contractor login:string company_cnpj:string role:string
+rails generate scaffold Company cnpj:string description:string
+rails generate scaffold Freelancer login:string average_score:decimal
+rails generate scaffold Issue issue_id:integer creator:string description:string category:string priority:string
+rails generate scaffold Follower follower_login:String followed_login:string
+rails generate scaffold Service contractor_login:string service_code:integer solution_id:int service_name:string start_date:datetime end_date:datetime status:string price:decimal final_score:decimal
+rails generate scaffold Solution solution_id:integer creator:string problem_id:int description:string
+rails generate scaffold User login:string email:string name:string cpf:string age:integer profession:string

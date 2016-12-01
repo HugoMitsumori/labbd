@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :required_knowledges
+  resources :freelancer_knowledges
   resources :conhecimento_requisitados
   resources :servicos
   resources :conhecimento_freelancers
