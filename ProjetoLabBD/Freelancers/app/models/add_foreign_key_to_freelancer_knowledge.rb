@@ -1,0 +1,2 @@
+class AddForeignKeyToFreelancerKnowledge < ApplicationRecord
+end

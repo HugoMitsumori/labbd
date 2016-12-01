@@ -1,0 +1,1 @@
+json.array! @add_foreign_key_to_freelancer_knowledges, partial: 'add_foreign_key_to_freelancer_knowledges/add_foreign_key_to_freelancer_knowledge', as: :add_foreign_key_to_freelancer_knowledge

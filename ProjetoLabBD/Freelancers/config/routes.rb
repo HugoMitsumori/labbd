@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :add_asd_to_freelancer_knowledges
+  resources :add_foreign_key_to_freelancer_knowledges
   resources :certificates
   resources :proposals
   resources :users

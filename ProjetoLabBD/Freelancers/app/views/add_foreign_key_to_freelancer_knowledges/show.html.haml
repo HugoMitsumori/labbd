@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Knowledge:
+  = @add_foreign_key_to_freelancer_knowledge.knowledge_id
+%p
+  %b Freelancer:
+  = @add_foreign_key_to_freelancer_knowledge.freelancer_id
+
+= link_to 'Edit', edit_add_foreign_key_to_freelancer_knowledge_path(@add_foreign_key_to_freelancer_knowledge)
+\|
+= link_to 'Back', add_foreign_key_to_freelancer_knowledges_path

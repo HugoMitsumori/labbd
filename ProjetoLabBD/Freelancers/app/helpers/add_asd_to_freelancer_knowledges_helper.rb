@@ -1,0 +1,2 @@
+module AddAsdToFreelancerKnowledgesHelper
+end

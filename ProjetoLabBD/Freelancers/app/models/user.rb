@@ -6,4 +6,5 @@ class User
 	property :cpf, type: String
 	property :age, type: Integer
 	property :profession, type: String
+	has_many :issues
 end

@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Knowledge:
+  = @add_asd_to_freelancer_knowledge.knowledge
+%p
+  %b Freelancer:
+  = @add_asd_to_freelancer_knowledge.freelancer
+
+= link_to 'Edit', edit_add_asd_to_freelancer_knowledge_path(@add_asd_to_freelancer_knowledge)
+\|
+= link_to 'Back', add_asd_to_freelancer_knowledges_path

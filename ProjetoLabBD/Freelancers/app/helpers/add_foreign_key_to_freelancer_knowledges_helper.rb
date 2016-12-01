@@ -1,0 +1,2 @@
+module AddForeignKeyToFreelancerKnowledgesHelper
+end

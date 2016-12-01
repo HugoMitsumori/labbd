@@ -10,14 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161201023641) do
+ActiveRecord::Schema.define(version: 20161201213935) do
+
+  create_table "add_asd_to_freelancer_knowledges", force: :cascade do |t|
+    t.integer  "knowledge_id"
+    t.integer  "freelancer_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["freelancer_id"], name: "index_add_asd_to_freelancer_knowledges_on_freelancer_id"
+    t.index ["knowledge_id"], name: "index_add_asd_to_freelancer_knowledges_on_knowledge_id"
+  end
 
   create_table "certificates", force: :cascade do |t|
-    t.string   "knowledge_name"
-    t.string   "freelancer_login"
     t.string   "certificate_name"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "knowledge_id"
+    t.integer  "freelancer_id"
+    t.index ["freelancer_id"], name: "index_certificates_on_freelancer_id"
+    t.index ["knowledge_id"], name: "index_certificates_on_knowledge_id"
   end
 
   create_table "companies", force: :cascade do |t|
@@ -29,10 +40,11 @@ ActiveRecord::Schema.define(version: 20161201023641) do
 
   create_table "contractors", force: :cascade do |t|
     t.string   "login"
-    t.string   "company_cnpj"
     t.string   "role"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "company_id"
+    t.index ["company_id"], name: "index_contractors_on_company_id"
   end
 
   create_table "followers", force: :cascade do |t|
@@ -43,10 +55,12 @@ ActiveRecord::Schema.define(version: 20161201023641) do
   end
 
   create_table "freelancer_knowledges", force: :cascade do |t|
-    t.string   "freelancer_login"
-    t.string   "knowledge_name"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "knowledge_id"
+    t.integer  "freelancer_id"
+    t.index ["freelancer_id"], name: "index_freelancer_knowledges_on_freelancer_id"
+    t.index ["knowledge_id"], name: "index_freelancer_knowledges_on_knowledge_id"
   end
 
   create_table "freelancers", force: :cascade do |t|
@@ -58,12 +72,13 @@ ActiveRecord::Schema.define(version: 20161201023641) do
 
   create_table "issues", force: :cascade do |t|
     t.integer  "issue_id"
-    t.string   "creator"
     t.string   "description"
     t.string   "category"
     t.string   "priority"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_issues_on_user_id"
   end
 
   create_table "knowledges", force: :cascade do |t|
@@ -74,41 +89,47 @@ ActiveRecord::Schema.define(version: 20161201023641) do
   end
 
   create_table "proposals", force: :cascade do |t|
-    t.integer  "service_code"
-    t.string   "freelancer_login"
     t.string   "status"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "freelancer_id"
+    t.integer  "service_id"
+    t.index ["freelancer_id"], name: "index_proposals_on_freelancer_id"
+    t.index ["service_id"], name: "index_proposals_on_service_id"
   end
 
   create_table "required_knowledges", force: :cascade do |t|
-    t.string   "knowledge_name"
-    t.integer  "service_code"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "knowledge_id"
+    t.integer  "service_id"
+    t.index ["knowledge_id"], name: "index_required_knowledges_on_knowledge_id"
+    t.index ["service_id"], name: "index_required_knowledges_on_service_id"
   end
 
   create_table "services", force: :cascade do |t|
-    t.string   "contractor_login"
     t.integer  "service_code"
-    t.integer  "solution_id"
     t.string   "service_name"
     t.datetime "start_date"
     t.datetime "end_date"
     t.string   "status"
     t.decimal  "price"
     t.decimal  "final_score"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "contractor_id"
+    t.index ["contractor_id"], name: "index_services_on_contractor_id"
   end
 
   create_table "solutions", force: :cascade do |t|
     t.integer  "solution_id"
-    t.string   "creator"
-    t.integer  "problem_id"
     t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "freelancer_id"
+    t.integer  "service_id"
+    t.index ["freelancer_id"], name: "index_solutions_on_freelancer_id"
+    t.index ["service_id"], name: "index_solutions_on_service_id"
   end
 
   create_table "users", force: :cascade do |t|

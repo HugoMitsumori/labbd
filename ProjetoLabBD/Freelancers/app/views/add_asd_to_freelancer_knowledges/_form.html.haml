@@ -1,0 +1,16 @@
+= form_for @add_asd_to_freelancer_knowledge do |f|
+  - if @add_asd_to_freelancer_knowledge.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@add_asd_to_freelancer_knowledge.errors.count, "error")} prohibited this add_asd_to_freelancer_knowledge from being saved:"
+      %ul
+        - @add_asd_to_freelancer_knowledge.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :knowledge
+    = f.text_field :knowledge
+  .field
+    = f.label :freelancer
+    = f.text_field :freelancer
+  .actions
+    = f.submit 'Save'
