@@ -1,6 +1,6 @@
 class ServiceGraph
   include Neo4j::ActiveNode
-  property :id, type: integer
+  property :id, type: Integer
   property :name, type: String
   validates :id, :presence => true
   validates :name, :presence => true
