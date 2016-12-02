@@ -3,8 +3,7 @@
 %table
   %thead
     %tr
-      %th Contractor
-      %th Service
+      %th User
       %th Service name
       %th Start date
       %th End date
@@ -18,8 +17,7 @@
   %tbody
     - @services.each do |service|
       %tr
-        %td= Contractor.find(service.contractor_id).login
-        %td= service.service_code
+        %td= User.find(service.user_id).login
         %td= service.service_name
         %td= service.start_date
         %td= service.end_date

@@ -2,7 +2,10 @@ class User < ActiveRecord::Base
 
   attr_accessor :remember_token
 
+  has_many :services
+
   before_save { self.email = email.downcase }
+  validates :login, presence: true, uniqueness: {case_sensitive:false}
   validates :name, presence: true, length: {maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: {maximum: 255 },
@@ -12,6 +15,12 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
 
+
+  def follows? (user)
+    @individual_self = Individual.find_by(login: self.login)
+    @individual_user = Individual.find_by(login: user.login)
+    return @individual_self.followeds.include?(@individual_user)
+  end
 
 
   # Returns the hash digest of the given string.

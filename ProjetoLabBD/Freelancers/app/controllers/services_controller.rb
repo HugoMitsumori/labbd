@@ -26,10 +26,14 @@ class ServicesController < ApplicationController
   def create
     @service = Service.new(service_params)
 
+    @service.user_id = @current_user.id
+
     respond_to do |format|
       if @service.save
         format.html { redirect_to @service, notice: 'Service was successfully created.' }
         format.json { render :show, status: :created, location: @service }
+        ServiceGraph.create({:id => @service.id, :name => @service.name}).save
+        @individual = Individual.find_by(login: @current_user.login )
       else
         format.html { render :new }
         format.json { render json: @service.errors, status: :unprocessable_entity }
@@ -69,6 +73,6 @@ class ServicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_params
-      params.require(:service).permit(:contractor_id, :service_id, :solution_id, :service_name, :start_date, :end_date, :status, :price, :final_score)
+      params.require(:service).permit(:user_id, :service_id, :solution_id, :service_name, :start_date, :end_date, :status, :price, :final_score)
     end
 end

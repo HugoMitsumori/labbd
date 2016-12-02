@@ -1,11 +1,8 @@
 %p#notice= notice
 
 %p
-  %b Contractor:
-  = link_to Contractor.find(@service.contractor_id).login, contractor_path(@service.contractor_id)
-%p
-  %b Service:
-  = @service.service_code
+  %b User:
+  = User.find(@service.user_id).login
 %p
   %b Service name:
   = @service.service_name
