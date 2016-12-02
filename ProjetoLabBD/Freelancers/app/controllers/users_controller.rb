@@ -32,8 +32,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /users/1
-  # PATCH/PUT /users/1.json
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
@@ -43,15 +41,20 @@ class UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
   def destroy
+    @user = User.find(params[:id])
     @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    flash[:notice] = "#{@user.name} deleted"
+    redirect_to root_path
   end
+
+  def search(s_params)
+    if(s_params)
+      User.where("name LIKE ?", "%#{s_params}%")
+    else
+      User.all
+    end
+  end  
 
   private
     def user_params
