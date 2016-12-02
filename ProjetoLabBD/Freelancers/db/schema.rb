@@ -139,9 +139,10 @@ ActiveRecord::Schema.define(version: 20161201213935) do
     t.string   "cpf"
     t.integer  "age"
     t.string   "profession"
-    t.string   "password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "password_digest"
+    t.string   "remember_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end
