@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= f.label :login %>
-    <%= f.text_field :login %>
+    <%= f.text_field :login, "@current_user" %>
   </div>
 
   <div class="field">
-    <%= f.label :company_cnpj %>
-    <%= f.text_field :company_cnpj %>
+    <%= f.label :company_id %>
+    <%= f.select :company_id, Company.all.collect {|c| [c.description, c.id]} %>
   </div>
 
   <div class="field">

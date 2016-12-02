@@ -1,0 +1,2 @@
+class AddCompanyIdToContractor < ApplicationRecord
+end

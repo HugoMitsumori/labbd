@@ -1,0 +1,2 @@
+module AddCompanyToContractorsHelper
+end

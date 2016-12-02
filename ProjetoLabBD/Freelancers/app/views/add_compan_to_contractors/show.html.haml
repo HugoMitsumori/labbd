@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Company:
+  = @add_compan_to_contractor.company_id
+
+= link_to 'Edit', edit_add_compan_to_contractor_path(@add_compan_to_contractor)
+\|
+= link_to 'Back', add_compan_to_contractors_path

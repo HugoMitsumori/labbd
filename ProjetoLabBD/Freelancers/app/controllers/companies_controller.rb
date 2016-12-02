@@ -61,6 +61,11 @@ class CompaniesController < ApplicationController
     end
   end
 
+  def get_names
+    asd = Company.all()
+    return asd
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_company

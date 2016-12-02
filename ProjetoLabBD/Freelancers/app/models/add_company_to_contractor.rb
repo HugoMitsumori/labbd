@@ -1,0 +1,2 @@
+class AddCompanyToContractor < ApplicationRecord
+end

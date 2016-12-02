@@ -1,0 +1,2 @@
+module AddCompanyIdToContractorsHelper
+end

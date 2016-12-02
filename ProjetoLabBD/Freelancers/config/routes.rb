@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :add_company_id_to_contractors
+  resources :add_compan_to_contractors
+  resources :add_company_to_contractors
   resources :add_asd_to_freelancer_knowledges
   resources :add_foreign_key_to_freelancer_knowledges
   resources :certificates

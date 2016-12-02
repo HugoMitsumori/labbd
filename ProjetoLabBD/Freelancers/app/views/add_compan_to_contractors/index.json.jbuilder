@@ -1,0 +1,1 @@
+json.array! @add_compan_to_contractors, partial: 'add_compan_to_contractors/add_compan_to_contractor', as: :add_compan_to_contractor

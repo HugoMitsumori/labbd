@@ -1,0 +1,21 @@
+%h1 Listing add_compan_to_contractors
+
+%table
+  %thead
+    %tr
+      %th Company
+      %th
+      %th
+      %th
+
+  %tbody
+    - @add_compan_to_contractors.each do |add_compan_to_contractor|
+      %tr
+        %td= add_compan_to_contractor.company_id
+        %td= link_to 'Show', add_compan_to_contractor
+        %td= link_to 'Edit', edit_add_compan_to_contractor_path(add_compan_to_contractor)
+        %td= link_to 'Destroy', add_compan_to_contractor, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Add compan to contractor', new_add_compan_to_contractor_path
