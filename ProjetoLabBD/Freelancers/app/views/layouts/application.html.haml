@@ -13,17 +13,17 @@
           .navbar-header
             = link_to "ProjetoBD", root_path, :class => "navbar-brand"
           %ul.nav.navbar-nav.navbar-right
-            %li= link_to 'Home', root_path
-            %li= link_to 'Users', '/users/index'            
+            %li= link_to 'Home', root_path           
             %li= link_to 'Services', services_path
             - if logged_in?
               %li
-                = link_to users_path do
-                  %span(class="glyphicon glyphicon-group")
-                  Services
-              %li
                 = link_to new_service_path do
                   Create Service
+              %li
+                = link_to users_path do
+                  %span(class="glyphicon glyphicon-group")
+                  Users
+              
               %li.dropdown
                 %a.dropdown-toggle{ :href => "#", "data-toggle" => "dropdown"}
                   Account
