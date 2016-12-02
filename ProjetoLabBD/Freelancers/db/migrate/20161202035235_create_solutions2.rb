@@ -1,4 +1,4 @@
-class CreateSolutions < ActiveRecord::Migration[5.0]
+class CreateSolutions2 < ActiveRecord::Migration[5.0]
   def change
     create_table :solutions do |t|
       t.integer :solution_id
