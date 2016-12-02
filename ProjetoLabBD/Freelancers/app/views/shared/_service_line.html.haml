@@ -1,0 +1,9 @@
+%li.list-group-item
+  .row
+    .col-sm-2
+      = link_to(service.name, service_path(service))
+    .col-sm-2
+      = service.start_date
+    .col-sm-3
+      =service.status
+    
