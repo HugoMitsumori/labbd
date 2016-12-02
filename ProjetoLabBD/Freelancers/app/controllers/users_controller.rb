@@ -22,7 +22,8 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-    if @user.save     
+    if @user.save    
+      Individual.create({:login => @user.login, :name => @user.name}).save 
       log_in @user
       flash[:notice] = "#{@user.name}, welcome to ProjetoBD"
       redirect_to user_path @user
@@ -30,6 +31,7 @@ class UsersController < ApplicationController
       flash[:warning] = @user.errors.full_messages
       render 'new'
     end
+
   end
 
   def update
@@ -55,6 +57,37 @@ class UsersController < ApplicationController
       User.all
     end
   end  
+
+  def follow
+    @user = User.find_by_id @current_user.id
+    @followed = User.find_by_id params[:followed]
+    @individual_user = Individual.find_by(login: @user.login)
+    @individual_followed = Individual.find_by(login: @followed.login)
+    @individual_user.followeds << @individual_followed
+    redirect_to (:back)
+  end
+
+  def unfollow
+    @user = User.find_by_id @current_user.id
+    @followed = User.find_by_id params[:followed]
+    @individual_user = Individual.find_by(login: @user.login)
+    @individual_followed = Individual.find_by(login: @followed.login)
+    @individual_user.followeds(:individual, :rel).match_to(@individual_followed).delete_all(:rel)
+    redirect_to (:back)
+  end
+
+
+  def followers
+    @user = User.find_by_id(params[:user_id])    
+    @individual = Individual.find_by(login: @user.login)
+    @followers = @individual.followers
+  end
+
+  def following
+    @user = User.find_by_id(params[:user_id])
+    @individual = Individual.find_by(login: @user.login)
+    @followers = @individual.followeds
+  end
 
   private
     def user_params
