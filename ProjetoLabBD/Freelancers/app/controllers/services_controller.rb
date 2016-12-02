@@ -32,8 +32,10 @@ class ServicesController < ApplicationController
       if @service.save
         format.html { redirect_to @service, notice: 'Service was successfully created.' }
         format.json { render :show, status: :created, location: @service }
-        ServiceGraph.create({:id => @service.id, :name => @service.name}).save
+        @service_graph = ServiceGraph.create({:id => @service.id, :name => @service.service_name})
+        @service_graph.save
         @individual = Individual.find_by(login: @current_user.login )
+        @service_graph.creator = @individual
       else
         format.html { render :new }
         format.json { render json: @service.errors, status: :unprocessable_entity }
