@@ -15,6 +15,7 @@ class SolutionsController < ApplicationController
   # GET /solutions/new
   def new
     @solution = Solution.new
+    @service_id = params[:format]
   end
 
   # GET /solutions/1/edit
@@ -70,5 +71,10 @@ class SolutionsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def solution_params
       params.require(:solution).permit(:solution_id, :user_id, :service_id, :description)
+    end
+    def service_params
+      if(params[:service] != nil)
+        params.require(:service).permit(:contractor_id, :service_id, :solution_id, :service_name, :start_date, :end_date, :status, :price, :final_score)
+      end
     end
 end
