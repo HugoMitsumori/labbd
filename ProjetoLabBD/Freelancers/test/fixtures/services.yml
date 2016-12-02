@@ -1,23 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  contractor_login: MyString
-  service_code: 1
-  solution_id: 
+  contractor_id: 1
+  service_id: 1
+  solution_id: 1
   service_name: MyString
-  start_date: 2016-12-01 00:36:15
-  end_date: 2016-12-01 00:36:15
+  start_date: 2016-12-02 01:33:28
+  end_date: 2016-12-02 01:33:28
   status: MyString
   price: 9.99
   final_score: 9.99
 
 two:
-  contractor_login: MyString
-  service_code: 1
-  solution_id: 
+  contractor_id: 1
+  service_id: 1
+  solution_id: 1
   service_name: MyString
-  start_date: 2016-12-01 00:36:15
-  end_date: 2016-12-01 00:36:15
+  start_date: 2016-12-02 01:33:28
+  end_date: 2016-12-02 01:33:28
   status: MyString
   price: 9.99
   final_score: 9.99

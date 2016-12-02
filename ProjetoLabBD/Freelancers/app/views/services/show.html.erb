@@ -1,18 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Contractor login:</strong>
-  <%= @service.contractor_login %>
+  <strong>Contractor:</strong>
+  <%= link_to Contractor.find(@service.contractor_id).login, contractor_path(@service.contractor_id) %>
 </p>
 
 <p>
   <strong>Service code:</strong>
   <%= @service.service_code %>
-</p>
-
-<p>
-  <strong>Solution:</strong>
-  <%= @service.solution_id %>
 </p>
 
 <p>
@@ -45,6 +40,6 @@
   <%= @service.final_score %>
 </p>
 
-<%= link_to 'Submit', anew_solution_path(@service) %> |
+<%= link_to 'Submit', new_solution_path(@service) %> |
 <%= link_to 'Edit', edit_service_path(@service) %> |
 <%= link_to 'Back', services_path %>

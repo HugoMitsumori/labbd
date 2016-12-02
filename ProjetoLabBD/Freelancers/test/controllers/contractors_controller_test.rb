@@ -17,7 +17,7 @@ class ContractorsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create contractor" do
     assert_difference('Contractor.count') do
-      post contractors_url, params: { contractor: { company_cnpj: @contractor.company_cnpj, login: @contractor.login, role: @contractor.role } }
+      post contractors_url, params: { contractor: { company_id: @contractor.company_id, login: @contractor.login, role: @contractor.role } }
     end
 
     assert_redirected_to contractor_url(Contractor.last)
@@ -34,7 +34,7 @@ class ContractorsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update contractor" do
-    patch contractor_url(@contractor), params: { contractor: { company_cnpj: @contractor.company_cnpj, login: @contractor.login, role: @contractor.role } }
+    patch contractor_url(@contractor), params: { contractor: { company_id: @contractor.company_id, login: @contractor.login, role: @contractor.role } }
     assert_redirected_to contractor_url(@contractor)
   end
 

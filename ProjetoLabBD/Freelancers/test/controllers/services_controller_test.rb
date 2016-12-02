@@ -17,7 +17,7 @@ class ServicesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create service" do
     assert_difference('Service.count') do
-      post services_url, params: { service: { contractor_login: @service.contractor_login, end_date: @service.end_date, final_score: @service.final_score, price: @service.price, service_code: @service.service_code, service_name: @service.service_name, solution_id: @service.solution_id, start_date: @service.start_date, status: @service.status } }
+      post services_url, params: { service: { contractor_id: @service.contractor_id, end_date: @service.end_date, final_score: @service.final_score, price: @service.price, service_id: @service.service_id, service_name: @service.service_name, solution_id: @service.solution_id, start_date: @service.start_date, status: @service.status } }
     end
 
     assert_redirected_to service_url(Service.last)
@@ -34,7 +34,7 @@ class ServicesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update service" do
-    patch service_url(@service), params: { service: { contractor_login: @service.contractor_login, end_date: @service.end_date, final_score: @service.final_score, price: @service.price, service_code: @service.service_code, service_name: @service.service_name, solution_id: @service.solution_id, start_date: @service.start_date, status: @service.status } }
+    patch service_url(@service), params: { service: { contractor_id: @service.contractor_id, end_date: @service.end_date, final_score: @service.final_score, price: @service.price, service_id: @service.service_id, service_name: @service.service_name, solution_id: @service.solution_id, start_date: @service.start_date, status: @service.status } }
     assert_redirected_to service_url(@service)
   end
 

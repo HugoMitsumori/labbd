@@ -1,0 +1,35 @@
+%h1 Listing services
+
+%table
+  %thead
+    %tr
+      %th Contractor
+      %th Service
+      %th Service name
+      %th Start date
+      %th End date
+      %th Status
+      %th Price
+      %th Final score
+      %th
+      %th
+      %th
+
+  %tbody
+    - @services.each do |service|
+      %tr
+        %td= Contractor.find(service.contractor_id).login
+        %td= service.service_code
+        %td= service.service_name
+        %td= service.start_date
+        %td= service.end_date
+        %td= service.status
+        %td= service.price
+        %td= service.final_score
+        %td= link_to 'Show', service
+        %td= link_to 'Edit', edit_service_path(service)
+        %td= link_to 'Destroy', service, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Service', new_service_path

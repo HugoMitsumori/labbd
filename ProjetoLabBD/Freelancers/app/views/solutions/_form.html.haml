@@ -1,0 +1,22 @@
+= form_for @solution do |f|
+  - if @solution.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@solution.errors.count, "error")} prohibited this solution from being saved:"
+      %ul
+        - @solution.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :solution_id
+    = f.number_field :solution_id
+  .field
+    = f.label :user_id
+    = f.number_field :user_id, value: @current_user
+  .field
+    = f.label :service_id
+    = f.select :service_id, Service.all.collect {|c| [c.service_name, c.id]}
+  .field
+    = f.label :description
+    = f.text_field :description
+  .actions
+    = f.submit 'Save'

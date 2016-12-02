@@ -1,0 +1,1 @@
+json.partial! "remove_company_from_contractors/remove_company_from_contractor", remove_company_from_contractor: @remove_company_from_contractor

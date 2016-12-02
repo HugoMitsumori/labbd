@@ -2,12 +2,12 @@
 
 one:
   solution_id: 1
-  creator: MyString
-  problem_id: 
+  user_id: 1
+  service_id: 1
   description: MyString
 
 two:
   solution_id: 1
-  creator: MyString
-  problem_id: 
+  user_id: 1
+  service_id: 1
   description: MyString

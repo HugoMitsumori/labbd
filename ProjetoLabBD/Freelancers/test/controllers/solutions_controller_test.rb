@@ -17,7 +17,7 @@ class SolutionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create solution" do
     assert_difference('Solution.count') do
-      post solutions_url, params: { solution: { creator: @solution.creator, description: @solution.description, problem_id: @solution.problem_id, solution_id: @solution.solution_id } }
+      post solutions_url, params: { solution: { description: @solution.description, service_id: @solution.service_id, solution_id: @solution.solution_id, user_id: @solution.user_id } }
     end
 
     assert_redirected_to solution_url(Solution.last)
@@ -34,7 +34,7 @@ class SolutionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update solution" do
-    patch solution_url(@solution), params: { solution: { creator: @solution.creator, description: @solution.description, problem_id: @solution.problem_id, solution_id: @solution.solution_id } }
+    patch solution_url(@solution), params: { solution: { description: @solution.description, service_id: @solution.service_id, solution_id: @solution.solution_id, user_id: @solution.user_id } }
     assert_redirected_to solution_url(@solution)
   end
 

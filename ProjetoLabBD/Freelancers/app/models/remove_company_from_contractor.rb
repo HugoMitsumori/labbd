@@ -1,0 +1,2 @@
+class RemoveCompanyFromContractor < ApplicationRecord
+end

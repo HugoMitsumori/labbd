@@ -1,0 +1,13 @@
+= form_for @remove_company_from_contractor do |f|
+  - if @remove_company_from_contractor.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@remove_company_from_contractor.errors.count, "error")} prohibited this remove_company_from_contractor from being saved:"
+      %ul
+        - @remove_company_from_contractor.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :company_id
+    = f.number_field :company_id
+  .actions
+    = f.submit 'Save'

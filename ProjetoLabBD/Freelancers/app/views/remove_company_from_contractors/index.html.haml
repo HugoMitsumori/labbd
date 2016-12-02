@@ -1,0 +1,21 @@
+%h1 Listing remove_company_from_contractors
+
+%table
+  %thead
+    %tr
+      %th Company
+      %th
+      %th
+      %th
+
+  %tbody
+    - @remove_company_from_contractors.each do |remove_company_from_contractor|
+      %tr
+        %td= remove_company_from_contractor.company_id
+        %td= link_to 'Show', remove_company_from_contractor
+        %td= link_to 'Edit', edit_remove_company_from_contractor_path(remove_company_from_contractor)
+        %td= link_to 'Destroy', remove_company_from_contractor, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Remove company from contractor', new_remove_company_from_contractor_path

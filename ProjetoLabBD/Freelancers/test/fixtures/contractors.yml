@@ -2,10 +2,10 @@
 
 one:
   login: MyString
-  company_cnpj: MyString
+  company_id: 1
   role: MyString
 
 two:
   login: MyString
-  company_cnpj: MyString
+  company_id: 1
   role: MyString

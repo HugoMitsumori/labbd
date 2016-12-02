@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Solution:
+  = @solution.solution_id
+%p
+  %b User:
+  = link_to User.find(@solution.user_id).login, user_path(@solution.user_id)
+%p
+  %b Service:
+  = link_to Service.find(@solution.service_id).service_name, service_path(@solution.service_id)
+%p
+  %b Description:
+  = @solution.description
+
+= link_to 'Edit', edit_solution_path(@solution)
+\|
+= link_to 'Back', solutions_path

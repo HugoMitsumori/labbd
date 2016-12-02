@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Contractor:
+  = link_to Contractor.find(@service.contractor_id).login, contractor_path(@service.contractor_id)
+%p
+  %b Service:
+  = @service.service_code
+%p
+  %b Service name:
+  = @service.service_name
+%p
+  %b Start date:
+  = @service.start_date
+%p
+  %b End date:
+  = @service.end_date
+%p
+  %b Status:
+  = @service.status
+%p
+  %b Price:
+  = @service.price
+%p
+  %b Final score:
+  = @service.final_score
+
+= link_to 'Edit', edit_service_path(@service)
+\|
+= link_to 'Back', services_path

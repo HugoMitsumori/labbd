@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :solutions
+  resources :services
+  resources :contractors
+  resources :migrations
+  resources :remove_company_from_contractors
+  resources :tests
   resources :add_company_id_to_contractors
   resources :add_compan_to_contractors
   resources :add_company_to_contractors
@@ -7,13 +13,10 @@ Rails.application.routes.draw do
   resources :certificates
   resources :proposals
   resources :users
-  resources :solutions
-  resources :services
   resources :followers
   resources :issues
   resources :freelancers
   resources :companies
-  resources :contractors
   resources :knowledges
   resources :required_knowledges
   resources :freelancer_knowledges

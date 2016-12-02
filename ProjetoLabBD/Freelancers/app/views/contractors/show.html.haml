@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Login:
+  = @contractor.login
+%p
+  %b Company:
+  = link_to Company.find(@contractor.company_id).description, company_path(@contractor.company_id)
+%p
+  %b Role:
+  = @contractor.role
+
+= link_to 'Edit', edit_contractor_path(@contractor)
+\|
+= link_to 'Back', contractors_path

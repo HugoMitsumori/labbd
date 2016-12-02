@@ -1,0 +1,27 @@
+%h1 Listing solutions
+
+%table
+  %thead
+    %tr
+      %th Solution
+      %th User
+      %th Service
+      %th Description
+      %th
+      %th
+      %th
+
+  %tbody
+    - @solutions.each do |solution|
+      %tr
+        %td= solution.solution_id
+        %td= User.find(solution.user_id).login
+        %td= Service.find(solution.service_id).service_name
+        %td= solution.description
+        %td= link_to 'Show', solution
+        %td= link_to 'Edit', edit_solution_path(solution)
+        %td= link_to 'Destroy', solution, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Solution', new_solution_path
