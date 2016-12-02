@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161202035235) do
+ActiveRecord::Schema.define(version: 20161202110915) do
 
   create_table "add_asd_to_freelancer_knowledges", force: :cascade do |t|
     t.integer  "knowledge_id"
@@ -127,10 +127,9 @@ ActiveRecord::Schema.define(version: 20161202035235) do
     t.string   "status"
     t.decimal  "price"
     t.decimal  "final_score"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.integer  "contractor_id"
-    t.index ["contractor_id"], name: "index_services_on_contractor_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "user_id"
   end
 
   create_table "solutions", force: :cascade do |t|
