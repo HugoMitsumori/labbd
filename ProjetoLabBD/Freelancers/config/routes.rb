@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   delete 'user/unfollow' => 'users#unfollow'
   get 'service/graph' => 'services#graph'
   get 'user/individual' => 'users#individual'
+  get 'acceptSolution' => 'solutions#accept'
 end

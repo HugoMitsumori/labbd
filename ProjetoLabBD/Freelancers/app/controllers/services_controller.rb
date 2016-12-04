@@ -12,6 +12,7 @@ class ServicesController < ApplicationController
   def show
     @solutions = Solution.all.select{|s| s.service_id == @service.id}
     @acceptedSolutions = @solutions.select{|s| s.accepted}
+    @imOwner = (@service.user_id == @current_user.id)
   end
 
   # GET /services/new

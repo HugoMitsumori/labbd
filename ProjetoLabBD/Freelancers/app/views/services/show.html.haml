@@ -47,7 +47,8 @@
         %th User
         %th Description
         %th        
-        %th
+        - if @imOwner
+          %th
 
     %tbody
       - @solutions.each do |solution|
@@ -55,8 +56,9 @@
           %td= solution.solution_id
           %td= User.find(solution.user_id).login
           %td= solution.description
-          %td= link_to 'Show', solution          
-          %td= link_to 'Accept Solution', :controller => :solutions, :action => :accept, :id => solution
+          %td= link_to 'Show', solution  
+          - if @imOwner      
+            %td= link_to 'Accept Solution', :controller => :solutions, :action => :accept, :id => solution.solution_id
 
 = link_to 'Submit solution', new_solution_path(@service)
 \|
