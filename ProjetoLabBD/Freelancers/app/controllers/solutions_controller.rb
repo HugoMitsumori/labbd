@@ -10,6 +10,7 @@ class SolutionsController < ApplicationController
   # GET /solutions/1
   # GET /solutions/1.json
   def show
+    @solution = Solution.find(params[:id])
   end
 
   # GET /solutions/new
@@ -26,6 +27,8 @@ class SolutionsController < ApplicationController
   # POST /solutions.json
   def create
     @solution = Solution.new(solution_params)
+    @solution.user_id = @current_user.id
+    @solution.solution_id = 0
 
     respond_to do |format|
       if @solution.save

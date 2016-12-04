@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     if @user.save    
       Individual.create({:login => @user.login, :name => @user.name}).save 
       log_in @user
-      flash[:notice] = "#{@user.name}, welcome to ProjetoBD"
+      flash[:notice] = "#{@user.name}, welcome to Objective Hiring"
       redirect_to user_path @user
     else
       flash[:warning] = @user.errors.full_messages

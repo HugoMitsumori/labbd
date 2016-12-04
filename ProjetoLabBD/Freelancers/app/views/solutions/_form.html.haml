@@ -7,12 +7,6 @@
           %li= msg
 
   .field
-    = f.label :solution_id
-    = f.number_field :solution_id
-  .field
-    = f.label :user_id
-    = f.number_field :user_id, value: @current_user.id
-  .field
     = f.label :service_id
     = f.select :service_id, Service.all.collect {|c| [c.service_name, c.id]}, selected: @service_id
   .field
