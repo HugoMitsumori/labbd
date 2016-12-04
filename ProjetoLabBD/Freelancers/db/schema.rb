@@ -10,15 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161202110915) do
+ActiveRecord::Schema.define(version: 20161204222844) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "add_asd_to_freelancer_knowledges", force: :cascade do |t|
     t.integer  "knowledge_id"
     t.integer  "freelancer_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.index ["freelancer_id"], name: "index_add_asd_to_freelancer_knowledges_on_freelancer_id"
-    t.index ["knowledge_id"], name: "index_add_asd_to_freelancer_knowledges_on_knowledge_id"
+    t.index ["freelancer_id"], name: "index_add_asd_to_freelancer_knowledges_on_freelancer_id", using: :btree
+    t.index ["knowledge_id"], name: "index_add_asd_to_freelancer_knowledges_on_knowledge_id", using: :btree
   end
 
   create_table "certificates", force: :cascade do |t|
@@ -27,8 +30,8 @@ ActiveRecord::Schema.define(version: 20161202110915) do
     t.datetime "updated_at",       null: false
     t.integer  "knowledge_id"
     t.integer  "freelancer_id"
-    t.index ["freelancer_id"], name: "index_certificates_on_freelancer_id"
-    t.index ["knowledge_id"], name: "index_certificates_on_knowledge_id"
+    t.index ["freelancer_id"], name: "index_certificates_on_freelancer_id", using: :btree
+    t.index ["knowledge_id"], name: "index_certificates_on_knowledge_id", using: :btree
   end
 
   create_table "companies", force: :cascade do |t|
@@ -58,8 +61,8 @@ ActiveRecord::Schema.define(version: 20161202110915) do
     t.datetime "updated_at",    null: false
     t.integer  "knowledge_id"
     t.integer  "freelancer_id"
-    t.index ["freelancer_id"], name: "index_freelancer_knowledges_on_freelancer_id"
-    t.index ["knowledge_id"], name: "index_freelancer_knowledges_on_knowledge_id"
+    t.index ["freelancer_id"], name: "index_freelancer_knowledges_on_freelancer_id", using: :btree
+    t.index ["knowledge_id"], name: "index_freelancer_knowledges_on_knowledge_id", using: :btree
   end
 
   create_table "freelancers", force: :cascade do |t|
@@ -77,7 +80,7 @@ ActiveRecord::Schema.define(version: 20161202110915) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
-    t.index ["user_id"], name: "index_issues_on_user_id"
+    t.index ["user_id"], name: "index_issues_on_user_id", using: :btree
   end
 
   create_table "knowledges", force: :cascade do |t|
@@ -100,8 +103,8 @@ ActiveRecord::Schema.define(version: 20161202110915) do
     t.datetime "updated_at",    null: false
     t.integer  "freelancer_id"
     t.integer  "service_id"
-    t.index ["freelancer_id"], name: "index_proposals_on_freelancer_id"
-    t.index ["service_id"], name: "index_proposals_on_service_id"
+    t.index ["freelancer_id"], name: "index_proposals_on_freelancer_id", using: :btree
+    t.index ["service_id"], name: "index_proposals_on_service_id", using: :btree
   end
 
   create_table "remove_company_from_contractors", force: :cascade do |t|
@@ -115,8 +118,8 @@ ActiveRecord::Schema.define(version: 20161202110915) do
     t.datetime "updated_at",   null: false
     t.integer  "knowledge_id"
     t.integer  "service_id"
-    t.index ["knowledge_id"], name: "index_required_knowledges_on_knowledge_id"
-    t.index ["service_id"], name: "index_required_knowledges_on_service_id"
+    t.index ["knowledge_id"], name: "index_required_knowledges_on_knowledge_id", using: :btree
+    t.index ["service_id"], name: "index_required_knowledges_on_service_id", using: :btree
   end
 
   create_table "services", force: :cascade do |t|
@@ -139,6 +142,7 @@ ActiveRecord::Schema.define(version: 20161202110915) do
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.boolean  "accepted"
   end
 
   create_table "tests", force: :cascade do |t|

@@ -2,6 +2,12 @@
   %b Solution:
   = @solution.solution_id
 %p
+  %b Status:
+  - if @solution.accepted
+    Accepted
+  - else
+    Pending
+%p
   %b User:
   = link_to User.find(@solution.user_id).login, user_path(@solution.user_id)
 %p

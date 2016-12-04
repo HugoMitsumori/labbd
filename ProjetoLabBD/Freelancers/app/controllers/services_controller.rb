@@ -11,6 +11,7 @@ class ServicesController < ApplicationController
   # GET /services/1.json
   def show
     @solutions = Solution.all.select{|s| s.service_id == @service.id}
+    @acceptedSolutions = @solutions.select{|s| s.accepted}
   end
 
   # GET /services/new

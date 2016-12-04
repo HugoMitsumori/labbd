@@ -20,8 +20,8 @@
   %b Final score:
   = @service.final_score
 
-- if !@solutions.empty?
-  %h1 Listing solutions for this service
+- if !@acceptedSolutions.empty?
+  %h1 Listing all accepted solutions for this service
   %table.table
     %thead
       %tr
@@ -29,7 +29,24 @@
         %th User
         %th Description
         %th
-        %th
+
+    %tbody
+      - @acceptedSolutions.each do |solution|
+        %tr
+          %td= solution.solution_id
+          %td= User.find(solution.user_id).login
+          %td= solution.description
+          %td= link_to 'Show', solution
+
+- if !@solutions.empty?
+  %h1 Listing all proposed solutions for this service
+  %table.table
+    %thead
+      %tr
+        %th Solution
+        %th User
+        %th Description
+        %th        
         %th
 
     %tbody
@@ -38,11 +55,8 @@
           %td= solution.solution_id
           %td= User.find(solution.user_id).login
           %td= solution.description
-          %td= link_to 'Show', solution
-          %td= link_to 'Edit', edit_solution_path(solution)
-          %td= link_to 'Destroy', solution, :method => :delete, :data => { :confirm => 'Are you sure?' }
-- else
-  BANANA
+          %td= link_to 'Show', solution          
+          %td= link_to 'Accept Solution', :controller => :solutions, :action => :accept, :id => solution
 
 = link_to 'Submit solution', new_solution_path(@service)
 \|

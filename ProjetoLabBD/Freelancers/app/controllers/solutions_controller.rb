@@ -1,5 +1,5 @@
 class SolutionsController < ApplicationController
-  before_action :set_solution, only: [:show, :edit, :update, :destroy]
+  before_action :set_solution, only: [:show, :edit, :update, :destroy, :accept]
 
   # GET /solutions
   # GET /solutions.json
@@ -63,6 +63,11 @@ class SolutionsController < ApplicationController
       format.html { redirect_to solutions_url, notice: 'Solution was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def accept
+    @solution.update_column(:accepted, true)
+    redirect_to request.referrer
   end
 
   private
