@@ -1,0 +1,29 @@
+%p
+  %h3 Profile
+
+%p
+  %strong Login:
+  =@user.login
+
+%p
+  %strong Email:
+  =@user.email
+
+%p
+  %strong Name:
+  =@user.name
+
+%p
+  %strong CPF:
+  =@user.cpf
+
+%p
+  %strong Age:
+  =@user.age
+
+%p
+  %strong Profession:
+  =@user.profession
+-if @current_user == @user
+  =link_to 'Edit', edit_user_path(@user)
+= link_to 'Back', users_path

@@ -21,5 +21,6 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
   post 'user/follow' => 'users#follow'
   delete 'user/unfollow' => 'users#unfollow'
-  post 'service/graph' => 'services#graph'
+  get 'service/graph' => 'services#graph'
+  get 'user/individual' => 'users#individual'
 end

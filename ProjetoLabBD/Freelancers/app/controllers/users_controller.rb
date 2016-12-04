@@ -60,6 +60,11 @@ class UsersController < ApplicationController
     end
   end  
 
+  def individual
+    @user = User.find_by(login: params[:user])
+    redirect_to user_path(@user)
+  end
+
   def follow
     @user = User.find_by_id @current_user.id
     @followed = User.find_by_id params[:followed]

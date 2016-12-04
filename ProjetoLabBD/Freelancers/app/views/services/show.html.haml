@@ -22,6 +22,7 @@
 
 = link_to 'Submit solution', new_solution_path(@service)
 \|
-= link_to 'Edit', edit_service_path(@service)
+-if @service.user_id == @current_user.id
+  = link_to 'Edit', edit_service_path(@service)
 \|
 = link_to 'Back', services_path

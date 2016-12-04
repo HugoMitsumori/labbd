@@ -22,7 +22,7 @@ class ServicesController < ApplicationController
   end
 
   def graph
-    @service = Service.find(login: params[:service])
+    @service = Service.find_by_id params[:service].to_i
     redirect_to service_path(@service)
   end
 
