@@ -5,6 +5,7 @@ class CreateServices < ActiveRecord::Migration[5.0]
       t.integer :service_code
       t.integer :solution_id
       t.string :service_name
+      t.string :description
       t.datetime :start_date
       t.datetime :end_date
       t.string :status

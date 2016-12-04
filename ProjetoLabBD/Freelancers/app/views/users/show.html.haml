@@ -1,6 +1,14 @@
 %p
   %h3 Profile
 
+-if @current_user.id != @user.id
+  %tr
+    %td
+      -if @current_user.follows?(@user)
+        =link_to 'Unfollow', user_unfollow_path(:followed=>@user), :class => "btn btn-primary btn-danger btn-block", :method=>:delete
+      -else
+        =link_to 'Follow', user_follow_path(:followed=>@user), :class => "btn btn-primary btn-whitelink btn-block", :method=>:post
+
 %p
   %strong Login:
   =@user.login
