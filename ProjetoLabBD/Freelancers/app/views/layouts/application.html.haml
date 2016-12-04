@@ -1,7 +1,7 @@
 !!! 5
 %html
   %head
-    %title ProjetoBD
+    %title Objective Hiring
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
     = csrf_meta_tags
@@ -11,7 +11,7 @@
       %nav.navbar.navbar-fixed-top.navbar-default
         .container-fluid
           .navbar-header
-            = link_to "ProjetoBD", root_path, :class => "navbar-brand"
+            = link_to "Objective Hiring", root_path, :class => "navbar-brand"
           %ul.nav.navbar-nav.navbar-right
             %li= link_to 'Home', root_path           
             %li= link_to 'Services', services_path
@@ -53,5 +53,5 @@
       = yield
     %footer.footer
       %small
-        ProjetoBD - Gianluca Takara, Hugo Mitsumori, Luan Torres
+        Objective Hiring - Gianluca Takara, Hugo Mitsumori, Luan Torres
 

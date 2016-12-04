@@ -1,9 +1,9 @@
 %h1 Listing services
 
-%table
+%table.table
   %thead
     %tr
-      %th User
+      %th Author
       %th Service name
       %th Start date
       %th End date
@@ -11,8 +11,7 @@
       %th Price
       %th Final score
       %th
-      %th
-      %th
+
 
   %tbody
     - @services.each do |service|
@@ -24,9 +23,7 @@
         %td= service.status
         %td= service.price
         %td= service.final_score
-        %td= link_to 'Show', service
-        %td= link_to 'Edit', edit_service_path(service)
-        %td= link_to 'Destroy', service, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'View', service
 
 %br
 

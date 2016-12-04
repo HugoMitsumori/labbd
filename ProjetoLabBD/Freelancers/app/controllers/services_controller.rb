@@ -27,13 +27,13 @@ class ServicesController < ApplicationController
     @service = Service.new(service_params)
 
     @service.user_id = @current_user.id
-
+    @service.status = 'Posted'
     respond_to do |format|
       if @service.save
         format.html { redirect_to @service, notice: 'Service was successfully created.' }
         format.json { render :show, status: :created, location: @service }
-        @service_graph = ServiceGraph.create({:id => @service.id, :name => @service.service_name})
-        @service_graph.save
+        ServiceGraph.create({:code => @service.id, :name => @service.service_name}).save
+        @service_graph = ServiceGraph.find_by(code: @service.id)
         @individual = Individual.find_by(login: @current_user.login )
         @service_graph.creator = @individual
       else
@@ -60,7 +60,9 @@ class ServicesController < ApplicationController
   # DELETE /services/1
   # DELETE /services/1.json
   def destroy
+    @service_graph = ServiceGraph.find_by(code: @service.id)
     @service.destroy
+    @service_graph.destroy
     respond_to do |format|
       format.html { redirect_to services_url, notice: 'Service was successfully destroyed.' }
       format.json { head :no_content }
@@ -75,6 +77,6 @@ class ServicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_params
-      params.require(:service).permit(:user_id, :service_id, :solution_id, :service_name, :start_date, :end_date, :status, :price, :final_score)
+      params.require(:service).permit(:user_id, :service_id, :solution_id, :service_name, :start_date, :end_date, :price)
     end
 end
