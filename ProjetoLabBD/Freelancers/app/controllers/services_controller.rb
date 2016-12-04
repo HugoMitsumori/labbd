@@ -21,18 +21,23 @@ class ServicesController < ApplicationController
   def edit
   end
 
+  def graph
+    @service = Service.find(login: params[:service])
+    redirect_to service_path(@service)
+  end
+
   # POST /services
   # POST /services.json
   def create
     @service = Service.new(service_params)
-
     @service.user_id = @current_user.id
     @service.status = 'Posted'
     respond_to do |format|
       if @service.save
         format.html { redirect_to @service, notice: 'Service was successfully created.' }
         format.json { render :show, status: :created, location: @service }
-        ServiceGraph.create({:code => @service.id, :name => @service.service_name}).save
+        ServiceGraph.create({:code => @service.id, :name => @service.service_name,
+          :start_date => @service.start_date}).save
         @service_graph = ServiceGraph.find_by(code: @service.id)
         @individual = Individual.find_by(login: @current_user.login )
         @service_graph.creator = @individual

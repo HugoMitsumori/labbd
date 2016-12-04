@@ -1,1 +1,0 @@
-json.array! @add_asd_to_freelancer_knowledges, partial: 'add_asd_to_freelancer_knowledges/add_asd_to_freelancer_knowledge', as: :add_asd_to_freelancer_knowledge

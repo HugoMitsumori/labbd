@@ -1,1 +1,0 @@
-json.partial! "add_company_id_to_contractors/add_company_id_to_contractor", add_company_id_to_contractor: @add_company_id_to_contractor

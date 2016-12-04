@@ -76,6 +76,6 @@ class ServiceGraphsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_graph_params
-      params.require(:service_graph).permit(:code, :name)
+      params.require(:service_graph).permit(:code, :name, :start_date)
     end
 end

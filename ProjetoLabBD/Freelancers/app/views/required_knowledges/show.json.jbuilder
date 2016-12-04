@@ -1,1 +1,0 @@
-json.partial! "required_knowledges/required_knowledge", required_knowledge: @required_knowledge

@@ -1,1 +1,0 @@
-json.partial! "add_foreign_key_to_freelancer_knowledges/add_foreign_key_to_freelancer_knowledge", add_foreign_key_to_freelancer_knowledge: @add_foreign_key_to_freelancer_knowledge

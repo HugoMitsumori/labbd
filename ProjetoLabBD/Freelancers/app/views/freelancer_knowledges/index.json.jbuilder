@@ -1,1 +1,0 @@
-json.array! @freelancer_knowledges, partial: 'freelancer_knowledges/freelancer_knowledge', as: :freelancer_knowledge

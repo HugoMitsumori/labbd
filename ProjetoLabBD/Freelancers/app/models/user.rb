@@ -35,6 +35,10 @@ class User < ActiveRecord::Base
     SecureRandom.urlsafe_base64
   end
 
+  def individual
+    return Individual.find_by(login: self.login)
+  end
+
   # Remembers a user in the database for use in persistent sessions.
   def remember
     self.remember_token = User.new_token

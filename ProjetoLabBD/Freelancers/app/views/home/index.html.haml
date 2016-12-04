@@ -10,7 +10,6 @@
       .row
         .col-sm-2 Name
         .col-sm-2 Start Date
-        .col-sm-3 Status
     - @recent_services.each do |service|
       = render :partial => 'shared/service_line', locals: {service: service}
 

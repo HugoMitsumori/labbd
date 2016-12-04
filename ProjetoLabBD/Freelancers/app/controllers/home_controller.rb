@@ -1,6 +1,10 @@
 class HomeController < ApplicationController
-  skip_before_filter :set_current_user, only: [:index]
   def index  	
-  	@recent_services = Service.recent.first(5)
+  	if @current_user != nil
+  		@services = @current_user.individual.followeds.services
+  		@recent_services=@services.sort {|a,b| a.start_date <=> b.start_date}.reverse
+  	else
+  		@recent_services=[]
   	end
+  end
 end

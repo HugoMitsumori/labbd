@@ -1,1 +1,0 @@
-json.array! @remove_company_from_contractors, partial: 'remove_company_from_contractors/remove_company_from_contractor', as: :remove_company_from_contractor

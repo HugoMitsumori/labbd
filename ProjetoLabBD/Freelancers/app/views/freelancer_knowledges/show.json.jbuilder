@@ -1,1 +1,0 @@
-json.partial! "freelancer_knowledges/freelancer_knowledge", freelancer_knowledge: @freelancer_knowledge

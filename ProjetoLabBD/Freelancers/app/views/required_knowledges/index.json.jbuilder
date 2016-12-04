@@ -1,1 +1,0 @@
-json.array! @required_knowledges, partial: 'required_knowledges/required_knowledge', as: :required_knowledge

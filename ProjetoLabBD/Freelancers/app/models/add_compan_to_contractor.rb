@@ -1,2 +1,0 @@
-class AddCompanToContractor < ApplicationRecord
-end

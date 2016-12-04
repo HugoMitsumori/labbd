@@ -1,2 +1,0 @@
-class RemoveCompanyFromContractor < ApplicationRecord
-end
