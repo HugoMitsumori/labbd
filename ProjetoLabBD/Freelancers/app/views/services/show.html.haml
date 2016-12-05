@@ -1,6 +1,6 @@
 %p
   %b User:
-  = User.find(@service.user_id).login
+  = link_to User.find(@service.user_id).login, user_path(@service.user_id)
 %p
   %b Service name:
   = @service.service_name
@@ -34,7 +34,7 @@
       - @acceptedSolutions.each do |solution|
         %tr
           %td= solution.id
-          %td= User.find(solution.user_id).login
+          %td= link_to User.find(solution.user_id).login, user_path(solution.user_id)
           %td= solution.description
           %td= link_to 'Show', solution
 
@@ -54,7 +54,7 @@
       - @solutions.each do |solution|
         %tr
           %td= solution.id
-          %td= User.find(solution.user_id).login
+          %td= link_to User.find(solution.user_id).login, user_path(solution.user_id)
           %td= solution.description
           %td= link_to 'Show', solution  
           - if @imOwner and !solution.accepted     
