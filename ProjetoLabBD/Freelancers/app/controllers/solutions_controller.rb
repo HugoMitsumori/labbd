@@ -29,6 +29,7 @@ class SolutionsController < ApplicationController
     @solution = Solution.new(solution_params)
     @solution.user_id = @current_user.id
     @solution.solution_id = 0
+    @solution.accepted = false
 
     respond_to do |format|
       if @solution.save
