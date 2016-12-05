@@ -33,7 +33,7 @@
     %tbody
       - @acceptedSolutions.each do |solution|
         %tr
-          %td= solution.solution_id
+          %td= solution.id
           %td= User.find(solution.user_id).login
           %td= solution.description
           %td= link_to 'Show', solution
@@ -53,11 +53,11 @@
     %tbody
       - @solutions.each do |solution|
         %tr
-          %td= solution.solution_id
+          %td= solution.id
           %td= User.find(solution.user_id).login
           %td= solution.description
           %td= link_to 'Show', solution  
-          - if @imOwner      
+          - if @imOwner and !solution.accepted     
             %td= link_to 'Accept Solution', :controller => :solutions, :action => :accept, :id => solution.id
 
 = link_to 'Submit solution', new_solution_path(@service)
