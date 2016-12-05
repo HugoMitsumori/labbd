@@ -58,7 +58,7 @@
           %td= solution.description
           %td= link_to 'Show', solution  
           - if @imOwner      
-            %td= link_to 'Accept Solution', :controller => :solutions, :action => :accept, :id => solution.solution_id
+            %td= link_to 'Accept Solution', :controller => :solutions, :action => :accept, :id => solution.id
 
 = link_to 'Submit solution', new_solution_path(@service)
 \|
