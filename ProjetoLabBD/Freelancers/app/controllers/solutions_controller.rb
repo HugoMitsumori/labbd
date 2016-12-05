@@ -35,6 +35,12 @@ class SolutionsController < ApplicationController
       if @solution.save
         format.html { redirect_to @solution, notice: 'Solution was successfully created.' }
         format.json { render :show, status: :created, location: @solution }
+        SolutionGraph.create({:code => @solution.id, :desc => @solution.description}).save
+        @solution_graph = SolutionGraph.find_by(code: @solution.id)
+        @individual = Individual.find_by(login: @current_user.login )
+        @solution_graph.creator = @individual
+        @service_graph = ServiceGraph.find_by(code: @solution.service_id)
+        @solution_graph.service = @service_graph
       else
         format.html { render :new }
         format.json { render json: @solution.errors, status: :unprocessable_entity }

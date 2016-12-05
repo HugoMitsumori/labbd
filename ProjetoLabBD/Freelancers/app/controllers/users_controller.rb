@@ -96,6 +96,11 @@ class UsersController < ApplicationController
     @followers = @individual.followeds
   end
 
+  def related
+    @individual = Individual.find_by(login: @user.login)
+    @user_solutions = SolutionGraph.find_by(creator: @individual)
+  end
+
   private
     def user_params
       params.require(:user).permit(:login, :name, :email,
